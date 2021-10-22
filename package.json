@@ -1,0 +1,39 @@
+{
+  "name": "domains-bot",
+  "version": "0.0.1",
+  "description": "Bot to get information about domain blocking on Cloudflare or Google",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.js -w src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nieopierzony/domains-bot.git"
+  },
+  "keywords": [
+    "telegram-bot",
+    "telegraf",
+    "domains"
+  ],
+  "author": "Philipp Zelinski (filipbon7@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nieopierzony/domains-bot/issues"
+  },
+  "homepage": "https://github.com/nieopierzony/domains-bot#readme",
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1"
+  },
+  "dependencies": {
+    "axios": "^0.23.0",
+    "dotenv": "^10.0.0",
+    "telegraf": "3.38",
+    "telegraf-i18n": "^6.6.0"
+  }
+}

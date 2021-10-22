@@ -1,7 +1,6 @@
 'use strict';
 
 const fetch = require('node-fetch');
-const { log } = require('winston');
 
 const { SAFEBROWSING_ENDPOINT } = require('./Constants');
 const Util = require('./Util');

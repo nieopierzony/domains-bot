@@ -3,8 +3,16 @@
 const Util = require('../src/util/Util');
 
 describe('Util.isURL', () => {
-  test('type of return must be always Boolean', () => {
-    expect(typeof Util.isURL() === 'boolean').toBe(true);
+  test('throw TypeError when url is not given', () => {
+    const fn = () => Util.isURL();
+    expect(fn).toThrow(TypeError);
+    expect(fn).toThrow('URL should be given');
+  });
+
+  test('should reject not URLs', () => {
+    expect(Util.isURL('qwerty')).toBeFalsy();
+    expect(Util.isURL('asdf@343.dfs')).toBeFalsy();
+    expect(Util.isURL('https://sdlaf@kljdf.#$sdf/sdaf')).toBeFalsy();
   });
 
   test('simple domain (example.com) must be false', () => {
@@ -27,6 +35,12 @@ describe('Util.isURL', () => {
 describe('Util.isDomain', () => {
   test('type of return must be always Boolean', () => {
     expect(typeof Util.isDomain() === 'boolean').toBe(true);
+  });
+
+  test('should reject not domains', () => {
+    expect(Util.isURL('qwerty')).toBeFalsy();
+    expect(Util.isURL('asdf@343.dfs')).toBeFalsy();
+    expect(Util.isURL('https://sdlaf@kljdf.#$sdf/sdaf')).toBeFalsy();
   });
 
   test('parse simple domain (example.com)', () => {

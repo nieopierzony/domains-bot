@@ -1,10 +1,10 @@
 {
   "name": "domains-bot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bot to get information about domain blocking on Cloudflare or Google",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "nodemon ./src/index.js -w src"
   },
   "repository": {
@@ -23,16 +23,19 @@
   },
   "homepage": "https://github.com/nieopierzony/domains-bot#readme",
   "devDependencies": {
+    "@types/jest": "^27.0.2",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.3.1",
     "nodemon": "^2.0.14",
     "prettier": "^2.4.1"
   },
   "dependencies": {
     "axios": "^0.23.0",
     "dotenv": "^10.0.0",
+    "npm": "^8.1.1",
     "telegraf": "3.38",
     "telegraf-i18n": "^6.6.0"
   }

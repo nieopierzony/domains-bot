@@ -2,12 +2,24 @@
 
 const Google = require('../src/util/Google');
 
-describe('properly get data from google', () => {
-  it('type of returned data is Boolean', async () => {
-    await expect(typeof Google.isSafe('test.onion') === 'boolean').toBeTruthy();
+// TODO: Find blacklisted domain and write test for it
+
+describe('Google.isSafe', () => {
+  test('throw TypeError when domain is not given', async () => {
+    try {
+      await Google.isSafe();
+    } catch (err) {
+      expect(err.message).toBe('URL should be given');
+    }
   });
 
-  it('"test.onion" should be safe', async () => {
-    await expect(Google.isSafe('test.onion')).toBe(true);
+  it('type of returned data is Boolean', () => {
+    Google.isSafe('test.onion')
+      .then(isSafe => expect(typeof isSafe === 'boolean').toBeTruthy())
+      .catch(() => {});
+  });
+
+  it('"test.onion" should be safe', () => {
+    expect(Google.isSafe('test.onion')).resolves.toBe(true);
   });
 });

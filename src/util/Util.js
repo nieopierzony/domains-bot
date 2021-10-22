@@ -1,7 +1,7 @@
 'use strict';
 
-const DOMAIN_REGEXP = /^[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}$/;
-const URL_REGEXP = /https?:\/\/(?:www\.)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b)*(\/[\/\d\w\.-]*)*(?:[\?])*(.+)*/;
+const DOMAIN_REGEXP = /^[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}$/;
+const URL_REGEXP = /https?:\/\/(?:www\.)?([-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b)*(\/[/\d\w.-]*)*(?:[?])*(.+)*/;
 
 module.exports = class Util extends null {
   /**
@@ -12,7 +12,7 @@ module.exports = class Util extends null {
   static isURL(url) {
     if (!url) throw new TypeError('URL should be given');
     const matched = url.match(URL_REGEXP);
-    return matched && matched[1] ? true : false;
+    return !!(matched && matched[1]);
   }
 
   /**

@@ -6,7 +6,7 @@ const URL_REGEXP = /https?:\/\/(?:www\.)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2
 module.exports = class Util extends null {
   /**
    * Whether the specified string is a valid URL (https://smth.com/foo/bar?test)
-   * @param {string} url
+   * @param {string} url URL to check (e. g. https://example.com/foo/bar?test=12)3
    * @returns {boolean} Whether url is valid
    */
   static isURL(url) {
@@ -17,7 +17,7 @@ module.exports = class Util extends null {
 
   /**
    * Whether the specified string is a valid domain (smth.com)
-   * @param {string} url
+   * @param {string} domain Domain to check (e. g. example.com)
    * @returns {boolean} Whether url is valid
    */
   static isDomain(domain) {
@@ -27,7 +27,7 @@ module.exports = class Util extends null {
 
   /**
    * Parse domain (example.com) from URL (https://example.com/foo/bar?test)
-   * @param {string} url
+   * @param {string} url URL to parse (e. g. https://example.com/foo/bar?test=123)
    * @returns {string} domain Parsed domain from url (example.com)
    */
   static domainFromURL(url) {

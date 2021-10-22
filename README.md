@@ -1,2 +1,5 @@
-# domains-bot
- Bot to get information about domain blocking on Cloudflare or Google
+# 🤖 DomainsInfo - Telegram bot
+
+Shows common information about given domain: ping, google blacklist
+
+(TODO: Write here smth...)

@@ -1,3 +1,5 @@
+'use strict';
+
 require('dotenv').config();
 
 const path = require('path');
@@ -15,7 +17,7 @@ const i18n = new TelegrafI18n({
 });
 bot.use(i18n.middleware());
 
-// Load up the handler
+// Load up the handlers
 handlersController(bot);
 
 bot.launch();

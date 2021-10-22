@@ -2,8 +2,6 @@
 
 const Google = require('../src/util/Google');
 
-// TODO: Find blacklisted domain and write test for it
-
 describe('Google.isSafe', () => {
   test('throw TypeError when domain is not given', async () => {
     try {
@@ -21,5 +19,9 @@ describe('Google.isSafe', () => {
 
   it('"test.onion" should be safe', () => {
     expect(Google.isSafe('test.onion')).resolves.toBe(true);
+  });
+
+  it('"cardanobonus.net" should be unsafe', () => {
+    expect(Google.isSafe('cardanobonus.net')).resolves.toBe(false);
   });
 });

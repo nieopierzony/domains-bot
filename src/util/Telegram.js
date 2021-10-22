@@ -10,7 +10,7 @@ module.exports = class Telegram extends null {
    * If clicking on the inline button - change the message, if the command - send a response in a new one
    * @param {TelegrafContext} ctx Event's context
    * @param {string} content Message content
-   * @param {object} keyboard Keyboards
+   * @param {Object} keyboard Keyboards
    */
   static async send(ctx, content, keyboard) {
     const markup = keyboard ? keyboard.extra(Extra.HTML()) : { parse_mode: 'HTML' };

@@ -33,14 +33,15 @@ describe('Util.isURL', () => {
 });
 
 describe('Util.isDomain', () => {
-  test('type of return must be always Boolean', () => {
-    expect(typeof Util.isDomain() === 'boolean').toBe(true);
+  test('throw TypeError when domain is not given', () => {
+    const fn = () => Util.isDomain();
+    expect(fn).toThrow(TypeError);
+    expect(fn).toThrow('Domain should be given');
   });
-
   test('should reject not domains', () => {
-    expect(Util.isURL('qwerty')).toBeFalsy();
-    expect(Util.isURL('asdf@343.dfs')).toBeFalsy();
-    expect(Util.isURL('https://sdlaf@kljdf.#$sdf/sdaf')).toBeFalsy();
+    expect(Util.isDomain('qwerty')).toBeFalsy();
+    expect(Util.isDomain('asdf^343.dfs')).toBeFalsy();
+    expect(Util.isDomain('https://sdlaf@kljdf.#$sdf/sdaf')).toBeFalsy();
   });
 
   test('parse simple domain (example.com)', () => {

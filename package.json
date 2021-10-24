@@ -37,6 +37,7 @@
     "dotenv": "^10.0.0",
     "node-fetch": "^2.6.1",
     "npm": "^8.1.1",
+    "ping": "^0.4.1",
     "telegraf": "3.38",
     "telegraf-i18n": "^6.6.0"
   }

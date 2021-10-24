@@ -9,7 +9,7 @@ module.exports = class Google extends null {
   /**
    * Looks for a domain in Google's registry of restricted sites
    * @param {string} domain Domain or URL of needed site
-   * @returns {Promise<Boolean>} Whether the domain is in the google registryl
+   * @returns {Promise<boolean>} Whether the domain is in the google registryl
    */
   static async isSafe(domain) {
     // Validate domain
